@@ -1,0 +1,33 @@
+<p>You can bind our <code>NgbPagination</code> component with slicing the data list</p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Artist</th>
+    <th scope="col">Population</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let artist of artists">
+    <th scope="row">{{ artist._id }}</th>
+    <td>
+      {{ artist.name }}
+    </td>
+    <td>{{ artist.country}}</td>
+    <td>{{ artist.genres}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="artists.length" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination>
+
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <option [ngValue]="2">5 items per page</option>
+    <option [ngValue]="4">10 items per page</option>
+    <option [ngValue]="6">20 items per page</option>
+  </select>
+</div>*/
